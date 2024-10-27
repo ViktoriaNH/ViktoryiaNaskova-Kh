@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+                                                            // Через цикл for ... of
+      function calculateSum(array) {
+        let sum = 0;
+        for (let i of array) {
+          if (Array.isArray(i)) {
+            sum += calculateSum(i);
+          } else {
+            sum += i;
+          }
+        }
+        return sum;
+      }
+      console.log(calculateSum([5, 7, [4, [2], 8, [1, 3], 2], [9, []], 1, 8]));
+
+
+
+                                                                // Через цикл for
+      function calculateSum(array) {
+        let sum = 0;
+        for (let i = 0; i < array.length; i++) {
+          if (Array.isArray(array[i])) {
+            sum += calculateSum(array[i]);
+          } else {
+            sum += array[i];
+          }
+        }
+        return sum;
+      }
+      console.log(calculateSum([5, 7, [4, [2], 8, [1, 3], 2], [9, []], 1, 8]));
+
+
+      // Разница между циклами: for предоставляют доступ к индексу в массиве, а не к фактическому элементу, т.е. нужно обязательно указывать (array[i])
+    </script>
+  </body>
+</html>
