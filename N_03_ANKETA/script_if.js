@@ -31,17 +31,13 @@ if (gender) {
 } else {
     gender = 'женщина';
 }
-let rest = "Пенсия";
-if (age >= 63 && (gender = "мужчина")) {
-  rest = "да";
-} else {
-  rest = "нет";
-}
 
-if ((age >= 58)  && (gender = "женщина")) {
-  rest = "да";
-} else {
-  rest = "нет";
+let rest = "Пенсия";
+if ((age >= 63 && gender === "мужчина") || (age >= 58 && gender === "женщина")) {
+  rest = 'да';
+}
+else {
+  rest = 'нет';
 }
 
 alert(`Ваше ФИО: ${surname} ${firstname} ${lastname}
