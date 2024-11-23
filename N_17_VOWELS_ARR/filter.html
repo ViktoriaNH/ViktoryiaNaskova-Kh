@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+    <script>
+      const arrayVowels = ["а", "о", "у", "ы", "э", "и", "е", "ё", "ю", "я"];
+      const string = prompt("Введите любую строку", "").toLowerCase().split("");
+      let vow = "";
+
+    function countVowels(string) {
+        return string.filter(item => arrayVowels.includes(item)).length;
+    }
+    const result = countVowels(string);
+    alert(`Количество гласных в этой строке: ${result}`);
+
+
+
+
+
+    </script>
+</body>
+</html>

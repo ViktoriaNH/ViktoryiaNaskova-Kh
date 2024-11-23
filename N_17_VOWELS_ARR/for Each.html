@@ -3,42 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>forEach</title>
   </head>
   <body>
     <script>
-      const arrayVowels = [
-        "а",
-        "о",
-        "у",
-        "ы",
-        "э",
-        "и",
-        "е",
-        "ё",
-        "ю",
-        "я",
-        "А",
-        "О",
-        "У",
-        "Ы",
-        "И",
-        "Е",
-        "Ё",
-        "Ю",
-        "Я",
-        "Э",
-      ];
-
-      const string = prompt("Введите любую строку", "").split("");
-      let vow = 0;
-
-      string.forEach(function (item) {
-        if (arrayVowels.includes(item)) {
-          vow++;
-        }
+      const arrayVowels = ["а", "о", "у", "ы", "э", "и", "е", "ё", "ю", "я"];
+      const string = prompt("Введите любую строку", "").toLowerCase().split("");
+      let vow = "";
+      
+      string.forEach((item) => {
+        if (arrayVowels.includes(item)) vow++;
       });
-      alert(`Количество гласных в этой строке: ${vow}`)
+      alert(`Количество гласных в этой строке: ${vow}`);
     </script>
   </body>
 </html>
