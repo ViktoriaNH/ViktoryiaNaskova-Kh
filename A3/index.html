@@ -9,7 +9,7 @@
     <script>
       const array = [" ", ",", ".", "-", "—", "?", "!", ":", ";", "..."];
 
-      function palindrom(str) {
+      function isPalindrom(str) {
         str = str
           .toLowerCase()
           .replaceAll("ё", "е")
@@ -32,7 +32,7 @@
           return "Это не палиндром";
         }
       }
-      console.log(palindrom("Муха! О, муха! Велика аки лев! Ах, ум! О ах, ум"))
+      console.log(isPalindrom("Муха! О, муха! Велика аки лев! Ах, ум! О ах, ум"))
 
     </script>
   </body>
