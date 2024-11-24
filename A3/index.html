@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const array = [" ", ",", ".", "-", "—", "?", "!", ":", ";", "..."];
+
+      function palindrom(str) {
+        str = str
+          .toLowerCase()
+          .replaceAll("ё", "е")
+          .replaceAll("ъ", "")
+          .replaceAll("ь", "")
+          .split("");
+        const newStr = [];
+        for (let i = 0; i < str.length; i++) {
+          if (!array.includes(str[i])) {
+            newStr.push(str[i]);
+          }
+        }
+
+        const string = newStr.join("");
+        const reverseStr = newStr.reverse().join("");
+
+        if (reverseStr === string) {
+          return "Это палиндром";
+        } else {
+          return "Это не палиндром";
+        }
+      }
+      console.log(palindrom("Муха! О, муха! Велика аки лев! Ах, ум! О ах, ум"))
+
+    </script>
+  </body>
+</html>
