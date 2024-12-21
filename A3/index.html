@@ -32,8 +32,43 @@
           return "Это не палиндром";
         }
       }
-      console.log(isPalindrom("Муха! О, муха! Велика аки лев! Ах, ум! О ах, ум"))
+      console.log(
+        isPalindrom("Муха! О, муха! Велика аки лев! Ах, ум! О ах, ум")
+      );
 
+
+      // Вариант 2 - проверка на полиднром через цикл
+
+      const array = [" ", ",", ".", "-", "—", "?", "!", ":", ";", "..."];
+
+      function isPalindrom(str) {
+        str = str
+          .toLowerCase()
+          .replaceAll("ё", "е")
+          .replaceAll("ъ", "")
+          .replaceAll("ь", "")
+          .split("");
+        const newStr = [];
+        for (let i = 0; i < str.length; i++) {
+          if (!array.includes(str[i])) {
+            newStr.push(str[i]);
+          }
+        }
+        const clearStr = newStr.join("");
+
+        function newPalindrom() {
+          let result = "";
+          let lastIndex = clearStr.length - 1;
+          for (let i = 0; i < clearStr.length / 2; i++) {
+            if (clearStr[i] !== clearStr[lastIndex - i]) {
+              return result = "Это НЕ палиндром";
+            }
+          }
+          return result = "Это палиндром";
+        }
+        return newPalindrom();
+      }
+      console.log(isPalindrom("Уверен и не реву"));
     </script>
   </body>
 </html>

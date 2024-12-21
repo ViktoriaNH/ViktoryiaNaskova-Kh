@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reduce</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
+      const arrayVowels = ["а", "о", "у", "ы", "э", "и", "е", "ё", "ю", "я"];
+      let vow = "";
+      const string = prompt("Введите любую строку", "").toLowerCase()
 
+      const vowels = string.split('').reduce ((acc, item) => {
+          if (arrayVowels.includes(item)) return vow++;
+        }, 0);
 
-            
-
-           
-
+      console.log(vow);
 
     </script>
-</body>
+  </body>
 </html>
